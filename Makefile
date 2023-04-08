@@ -2,4 +2,4 @@ build:
 	mdbook build -d docs .
 
 serve:
-	mdbook serve --open
+	mdbook serve -d docs --open
