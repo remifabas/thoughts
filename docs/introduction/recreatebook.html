@@ -147,8 +147,23 @@
                         <h1 id="how-to-recreate-this-book"><a class="header" href="#how-to-recreate-this-book">How to recreate this book</a></h1>
 <h2 id="install-rust"><a class="header" href="#install-rust">Install rust</a></h2>
 <p><a href="https://www.rust-lang.org/tools/install">rust install documentation</a></p>
-<h2 id="install-mdbook-wirh-cargo"><a class="header" href="#install-mdbook-wirh-cargo">Install mdbook wirh cargo</a></h2>
+<h2 id="install-mdbook-with-cargo"><a class="header" href="#install-mdbook-with-cargo">Install mdbook with cargo</a></h2>
 <p><a href="https://rust-lang.github.io/mdBook/guide/installation.html">mdbook install documentation</a></p>
+<h2 id="activate-github-actions"><a class="header" href="#activate-github-actions">Activate Github actions</a></h2>
+<p>In your github repository, go to settings, pages.
+select : Deploy from branch, &lt;your_branch&gt;, and docs folder</p>
+<h2 id="build-current-markdown-to-html"><a class="header" href="#build-current-markdown-to-html">Build current markdown to Html</a></h2>
+<p>You can use some makefile targets to:</p>
+<ul>
+<li>locally serve the book</li>
+</ul>
+<pre><code>make serve
+</code></pre>
+<ul>
+<li>build html/js in docs folder</li>
+</ul>
+<pre><code>make build
+</code></pre>
 
                     </main>
 
