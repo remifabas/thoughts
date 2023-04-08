@@ -1,0 +1,6 @@
+[book]
+authors = ["Rémi Fabas"]
+language = "en"
+multilingual = false
+src = "src"
+title = "toughts"
