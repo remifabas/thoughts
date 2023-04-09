@@ -7,11 +7,24 @@
 
 # Dev
 
-- [Golang](./dev/golang.md)
+- [Go](./dev/go.md)
+  - [PPROF](./dev/go/pprof.md)
 
 # Ops
 
 - [Kubernetes](./ops/kubernetes.md)
+
+  - [Kind](./ops/kubernetes/kind.md)
+
+- [Databases](./ops/databases.md)
+
+  - [SQL](./ops/sql.md)
+    - [Postgres](./ops/sql/postgres.md)
+  - [NoSQL](./ops/nosql.md)
+    - [dgraph](./ops/nosql/dgraph.md)
+
+- [Testing](./ops/testing.md)
+  - [Vegeta](./ops/testing/vegeta.md)
 
 # General
 

@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">First words</li><li class="chapter-item expanded "><a href="introduction/introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction/recreatebook.html"><strong aria-hidden="true">1.1.</strong> How to recreate this book</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Dev</li><li class="chapter-item expanded "><a href="dev/golang.html"><strong aria-hidden="true">2.</strong> Golang</a></li><li class="chapter-item expanded affix "><li class="part-title">Ops</li><li class="chapter-item expanded "><a href="ops/kubernetes.html"><strong aria-hidden="true">3.</strong> Kubernetes</a></li><li class="chapter-item expanded affix "><li class="part-title">General</li><li class="chapter-item expanded "><a href="general/git.html"><strong aria-hidden="true">4.</strong> Git</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="misc/contributors.html">Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">First words</li><li class="chapter-item expanded "><a href="introduction/introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="introduction/recreatebook.html"><strong aria-hidden="true">1.1.</strong> How to recreate this book</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Dev</li><li class="chapter-item expanded "><a href="dev/go.html"><strong aria-hidden="true">2.</strong> Go</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="dev/go/pprof.html"><strong aria-hidden="true">2.1.</strong> PPROF</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">Ops</li><li class="chapter-item expanded "><a href="ops/kubernetes.html"><strong aria-hidden="true">3.</strong> Kubernetes</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ops/kubernetes/kind.html"><strong aria-hidden="true">3.1.</strong> Kind</a></li></ol></li><li class="chapter-item expanded "><a href="ops/databases.html"><strong aria-hidden="true">4.</strong> Databases</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ops/sql.html"><strong aria-hidden="true">4.1.</strong> SQL</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ops/sql/postgres.html"><strong aria-hidden="true">4.1.1.</strong> Postgres</a></li></ol></li><li class="chapter-item expanded "><a href="ops/nosql.html"><strong aria-hidden="true">4.2.</strong> NoSQL</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ops/nosql/dgraph.html"><strong aria-hidden="true">4.2.1.</strong> dgraph</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="ops/testing.html"><strong aria-hidden="true">5.</strong> Testing</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="ops/testing/vegeta.html"><strong aria-hidden="true">5.1.</strong> Vegeta</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">General</li><li class="chapter-item expanded "><a href="general/git.html"><strong aria-hidden="true">6.</strong> Git</a></li><li class="spacer"></li><li class="chapter-item expanded affix "><a href="misc/contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -158,14 +158,9 @@
 <p><a class="admonition-anchor-link" href="introduction/introduction.html#admonition-tldr"></a></p>
 </summary>
 <div>
-<p>learn some stuff, and try to not forget them, general cheatsheet</p>
+<p>Because i start a lof of projects, never finish them and forgot everything i did.</p>
 </div>
 </details>
-<ul>
-<li>Learn how mdbook works</li>
-<li>Learn rust in the same time</li>
-<li>Learn github, github actions, github pages</li>
-</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="how-to-recreate-this-book"><a class="header" href="#how-to-recreate-this-book">How to recreate this book</a></h1>
 <h2 id="install-rust"><a class="header" href="#install-rust">Install rust</a></h2>
 <p><a href="https://www.rust-lang.org/tools/install">rust install documentation</a></p>
@@ -187,8 +182,164 @@ select : Deploy from branch, &lt;your_branch&gt;, and docs folder</p>
 <pre><code>make build
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="golang"><a class="header" href="#golang">Golang</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="pprof"><a class="header" href="#pprof">PPROF</a></h1>
+<p><a href="https://github.com/google/pprof">pprof</a>
+pprof is a tool for visualization and analysis of profiling data.</p>
+<h2 id="analyse-web-server"><a class="header" href="#analyse-web-server">Analyse web server</a></h2>
+<p>Add this to you program</p>
+<pre><code class="language-go">package main
+
+import _ &quot;net/http/pprof&quot;
+import &quot;net/http&quot;
+
+func main() {
+    go func() {
+        _ = http.ListenAndServe(&quot;localhost:6060&quot;, nil)
+    }()
+    // your code
+}
+
+</code></pre>
+<p>Then you can make an http call to localhost:6060</p>
+<h3 id="ram-profiling"><a class="header" href="#ram-profiling">RAM profiling</a></h3>
+<p>A little info:
+In order to analyze the currently used memory, just select the inuse indices (bytes or object counts):</p>
+<ul>
+<li>inuse_space: memory allocated but not yet released</li>
+<li>inuse_objects: objects allocated but not yet released</li>
+</ul>
+<p>If you are interested in understanding the total amount of bytes or objects, use the alloc indices instead:</p>
+<ul>
+<li>alloc_space:   the  total amount of memory allocated</li>
+<li>alloc_objects : the  total number of objects allocated</li>
+</ul>
+<p>flat: the memory allocated and held by this function
+cum: the memory allocated by this function together with functions that it has called</p>
+<p>Ok let's get some info !
+Retrieve inuse_space: (by default --inuse_space you can forget it)</p>
+<pre><code class="language-bash">go tool pprof --inuse_space -top http://localhost:6060/debug/pprof/heap
+go tool pprof -png http://localhost:6060/debug/pprof/heap &gt; ram.png
+</code></pre>
+<p>Retrieve alloc_space</p>
+<pre><code class="language-bash">go tool pprof --alloc_space -top http://localhost:6060/debug/pprof/heap
+</code></pre>
+<h3 id="cpu-profiling"><a class="header" href="#cpu-profiling">CPU profiling</a></h3>
+<pre><code class="language-bash">go tool pprof -png &quot;http://localhost:6060/debug/pprof/profile?seconds=5&quot; &gt;cpu.png
+</code></pre>
+<h2 id="in-test"><a class="header" href="#in-test">In test</a></h2>
+<p>https://wablesushmita.medium.com/cpu-memory-profiling-with-golang-pprof-3deddbd7b964</p>
+<pre><code class="language-bash">go test -cpuprofile cpu.prof -memprofile mem.prof
+go tool pprof cpu.prof
+go tool pprof cpu.prof
+
+go-torch generate svg
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="kubernetes"><a class="header" href="#kubernetes">Kubernetes</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="kind"><a class="header" href="#kind">Kind</a></h1>
+<pre><code class="language-yaml">kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+# One control plane node and three &quot;workers&quot;.
+#
+# While these will not add more real compute capacity and
+# have limited isolation, this can be useful for testing
+# rolling updates etc.
+#
+# The API-server and other control plane components will be
+# on the control-plane node.
+#
+# You probably don't need this unless you are testing Kubernetes itself.
+nodes:
+  - role: control-plane
+  - role: control-plane
+  - role: worker
+  - role: worker
+  - role: worker
+</code></pre>
+<pre><code>kind create cluster --name local-cluster --config cluster-config.yaml
+</code></pre>
+<pre><code>kind delete clusters local-cluster
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="databases"><a class="header" href="#databases">Databases</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sql"><a class="header" href="#sql">SQL</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="postgres"><a class="header" href="#postgres">Postgres</a></h1>
+<pre><code class="language-bash">docker run -d --name my-postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -e POSTGRES_DB=goods -p 5432:5432 postgres:15.2
+
+docker exec -it postgresql psql -d goods -U postgres
+</code></pre>
+<pre><code class="language-sql">CREATE TABLE goods(
+    id BIGSERIAL NOT NULL PRIMARY KEY ,
+    name VARCHAR(255) NOT NULL,
+    description TEXT NULL,
+    price INT NOT NULL
+);
+
+INSERT INTO goods (name, description, price)
+VALUES ('Apple', 'Red fruit', 100),
+       ('Orange', 'Orange fruit', 150),
+       ('Banana', 'Yellow fruit', 200),
+       ('Pineapple', 'Yellow fruit', 250),
+       ('Melon', 'Green fruit', 300);
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="nosql"><a class="header" href="#nosql">NoSQL</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dgraph"><a class="header" href="#dgraph">dgraph</a></h1>
+<p><a href="https://github.com/dgraph-io/dgraph">Dgraph</a></p>
+<p>graph database with graphql as query lang</p>
+<pre><code class="language-yaml"># This Docker Compose file can be used to quickly bootup Dgraph Zero
+# and Alpha in different Docker containers.
+
+# It mounts /tmp/data on the host machine to /dgraph within the
+# container. You will need to change /tmp/data to a more appropriate location.
+# Run `docker-compose up` to start Dgraph.
+
+version: &quot;3.2&quot;
+services:
+  zero:
+    image: dgraph/dgraph:latest
+    volumes:
+      - /tmp/data:/dgraph
+    ports:
+      - 5080:5080
+      - 6080:6080
+    restart: on-failure
+    command: dgraph zero --my=zero:5080
+  alpha:
+    image: dgraph/dgraph:latest
+    volumes:
+      - /tmp/data:/dgraph
+    ports:
+      - 8080:8080
+      - 9080:9080
+    restart: on-failure
+    command: dgraph alpha --my=alpha:7080 --zero=zero:5080
+  ratel:
+    image: dgraph/ratel:latest
+    ports:
+      - 8000:8000
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="testing"><a class="header" href="#testing">Testing</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="vegeta"><a class="header" href="#vegeta">Vegeta</a></h1>
+<pre><code class="language-bash">vegeta attack -targets conf.txt -name=5000qps -rate=5000 -duration=1s &gt; result.js.bin
+</code></pre>
+<p>Simple GET request</p>
+<pre><code>GET http://localhost:8080/goods
+</code></pre>
+<p>POST with body Example of conf.txt</p>
+<pre><code>POST http://localhost:8082/api/graphql
+Authorization: Bearer ..
+content-type: application/json
+@body.json
+</code></pre>
+<p>Example of body.json</p>
+<pre><code class="language-json">{
+  &quot;query&quot;: &quot;query{\n  rmfs(){\n    edges{\n      node{\n        id\n        name\n      }\n    }\n  }\n}&quot;
+}
+</code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="git"><a class="header" href="#git">Git</a></h1>
+<h2 id="gitlab"><a class="header" href="#gitlab">Gitlab</a></h2>
+<p>First you need to create a personal access token
+git config --global credential.helper store
+git pull</p>
+<p>it will ask you your username and password (use your pat). Then there is no need to enter user/password</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="contributors"><a class="header" href="#contributors">Contributors</a></h1>
 <p>Rémi Fabas</p>
 
