@@ -2,7 +2,9 @@
 
 Why did this book exist ?
 
-TL:DR, learn some stuff
+```admonish success title="TL:DR" collapsible=true
+learn some stuff, and try to not forget them, general cheatsheet
+```
 
 - Learn how mdbook works
 - Learn rust in the same time
