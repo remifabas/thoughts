@@ -12,7 +12,8 @@ assets_version = "2.0.0" # do not edit: managed by `mdbook-admonish install`
 [preprocessor.catppuccin]
 assets_version = "0.1.1" # DO NOT EDIT: Managed by `mdbook-catppuccin install`
 
-[output]
+[output.html.fold]
+enable = true
 
 [output.html]
 default-theme = "latte"
