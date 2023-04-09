@@ -3,7 +3,7 @@ authors = ["Rémi Fabas"]
 language = "en"
 multilingual = false
 src = "src"
-title = "toughts"
+title = "thoughts"
 
 [preprocessor.admonish]
 command = "mdbook-admonish"
