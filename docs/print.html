@@ -184,7 +184,34 @@ select : Deploy from branch, &lt;your_branch&gt;, and docs folder</p>
 </ul>
 <pre><code>make build
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="golang"><a class="header" href="#golang">Golang</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="go-golang"><a class="header" href="#go-golang">Go, Golang</a></h1>
+<details id="admonition-my-doc" class="admonition bug">
+<summary class="admonition-title">
+<p>My doc</p>
+<p><a class="admonition-anchor-link" href="dev/go.html#admonition-my-doc"></a></p>
+</summary>
+<div>
+<p>Be carefull, not always up to date.</p>
+<ul>
+<li><a href="dev/go/pprof.html">pprof</a></li>
+</ul>
+</div>
+</details>
+<div id="admonition-external-doc-and-links" class="admonition note">
+<div class="admonition-title">
+<p>External doc and links</p>
+<p><a class="admonition-anchor-link" href="dev/go.html#admonition-external-doc-and-links"></a></p>
+</div>
+<div>
+<ul>
+<li><a href="https://go.dev/">Main website</a></li>
+<li><a href="https://go.dev/doc/install">Install</a></li>
+<li><a href="https://go.dev/solutions/use-cases">Uses cases</a></li>
+<li><a href="https://github.com/avelino/awesome-go">Awesome-go</a></li>
+<li><a href="https://github.com/golang-standards/project-layout">Base project layout</a></li>
+</ul>
+</div>
+</div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="pprof"><a class="header" href="#pprof">PPROF</a></h1>
 <p><a href="https://github.com/google/pprof">pprof</a>
 pprof is a tool for visualization and analysis of profiling data.</p>
@@ -238,7 +265,37 @@ go tool pprof cpu.prof
 go-torch generate svg
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="kubernetes"><a class="header" href="#kubernetes">Kubernetes</a></h1>
+<p>Kubernetes, also known as <span style="color: hotpink">K8s</span>, is an open-source system for automating deployment, scaling, and management of containerized applications.</p>
+<ul>
+<li><a href="ops/kubernetes/kind.html">Create a local cluster with kind</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="kind"><a class="header" href="#kind">Kind</a></h1>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/kind.html#admonition-note"></a></p>
+</div>
+<div>
+<p><a href="https://kind.sigs.k8s.io/">kind</a> is a tool for running local Kubernetes clusters using Docker container “nodes”.
+kind was primarily designed for testing Kubernetes itself, but may be used for local development or CI.</p>
+</div>
+</div>
+<details id="admonition-install" class="admonition warning">
+<summary class="admonition-title">
+<p>install</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/kind.html#admonition-install"></a></p>
+</summary>
+<div>
+<p>If you have go (1.17+) and docker installed  <code>go install sigs.k8s.io/kind@v0.18.0</code></p>
+<p>Other way: <a href="https://kind.sigs.k8s.io/docs/user/quick-start#installation">here</a></p>
+</div>
+</details>
+<details id="admonition-config-file" class="admonition example">
+<summary class="admonition-title">
+<p>config file</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/kind.html#admonition-config-file"></a></p>
+</summary>
+<div>
 <pre><code class="language-yaml">kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 # One control plane node and three &quot;workers&quot;.
@@ -258,8 +315,13 @@ nodes:
   - role: worker
   - role: worker
 </code></pre>
+<p>`</p>
+</div>
+</details>
+<p>How to <span style="color: hotpink">create</span> a cluster from a config file:</p>
 <pre><code>kind create cluster --name local-cluster --config cluster-config.yaml
 </code></pre>
+<p>How to <span style="color: hotpink">delete</span> a cluster:</p>
 <pre><code>kind delete clusters local-cluster
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="databases"><a class="header" href="#databases">Databases</a></h1>
@@ -344,7 +406,7 @@ git config --global credential.helper store
 git pull</p>
 <p>it will ask you your username and password (use your pat). Then there is no need to enter user/password</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="contributors"><a class="header" href="#contributors">Contributors</a></h1>
-<p>Rémi Fabas</p>
+<p><a href="https://remifabas.github.io/">Rémi Fabas</a></p>
 
                     </main>
 
@@ -363,22 +425,6 @@ git pull</p>
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

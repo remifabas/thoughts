@@ -153,6 +153,32 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="kind"><a class="header" href="#kind">Kind</a></h1>
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="#admonition-note"></a></p>
+</div>
+<div>
+<p><a href="https://kind.sigs.k8s.io/">kind</a> is a tool for running local Kubernetes clusters using Docker container “nodes”.
+kind was primarily designed for testing Kubernetes itself, but may be used for local development or CI.</p>
+</div>
+</div>
+<details id="admonition-install" class="admonition warning">
+<summary class="admonition-title">
+<p>install</p>
+<p><a class="admonition-anchor-link" href="#admonition-install"></a></p>
+</summary>
+<div>
+<p>If you have go (1.17+) and docker installed  <code>go install sigs.k8s.io/kind@v0.18.0</code></p>
+<p>Other way: <a href="https://kind.sigs.k8s.io/docs/user/quick-start#installation">here</a></p>
+</div>
+</details>
+<details id="admonition-config-file" class="admonition example">
+<summary class="admonition-title">
+<p>config file</p>
+<p><a class="admonition-anchor-link" href="#admonition-config-file"></a></p>
+</summary>
+<div>
 <pre><code class="language-yaml">kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 # One control plane node and three &quot;workers&quot;.
@@ -172,8 +198,13 @@ nodes:
   - role: worker
   - role: worker
 </code></pre>
+<p>`</p>
+</div>
+</details>
+<p>How to <span style="color: hotpink">create</span> a cluster from a config file:</p>
 <pre><code>kind create cluster --name local-cluster --config cluster-config.yaml
 </code></pre>
+<p>How to <span style="color: hotpink">delete</span> a cluster:</p>
 <pre><code>kind delete clusters local-cluster
 </code></pre>
 
@@ -206,22 +237,6 @@ nodes:
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

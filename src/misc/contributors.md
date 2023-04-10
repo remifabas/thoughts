@@ -1,3 +1,3 @@
 # Contributors
 
-Rémi Fabas
+[Rémi Fabas](https://remifabas.github.io/)

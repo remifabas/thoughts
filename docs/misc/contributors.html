@@ -153,7 +153,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="contributors"><a class="header" href="#contributors">Contributors</a></h1>
-<p>Rémi Fabas</p>
+<p><a href="https://remifabas.github.io/">Rémi Fabas</a></p>
 
                     </main>
 
@@ -178,22 +178,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

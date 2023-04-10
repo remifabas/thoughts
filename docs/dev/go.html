@@ -152,7 +152,34 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="golang"><a class="header" href="#golang">Golang</a></h1>
+                        <h1 id="go-golang"><a class="header" href="#go-golang">Go, Golang</a></h1>
+<details id="admonition-my-doc" class="admonition bug">
+<summary class="admonition-title">
+<p>My doc</p>
+<p><a class="admonition-anchor-link" href="#admonition-my-doc"></a></p>
+</summary>
+<div>
+<p>Be carefull, not always up to date.</p>
+<ul>
+<li><a href="go/pprof.html">pprof</a></li>
+</ul>
+</div>
+</details>
+<div id="admonition-external-doc-and-links" class="admonition note">
+<div class="admonition-title">
+<p>External doc and links</p>
+<p><a class="admonition-anchor-link" href="#admonition-external-doc-and-links"></a></p>
+</div>
+<div>
+<ul>
+<li><a href="https://go.dev/">Main website</a></li>
+<li><a href="https://go.dev/doc/install">Install</a></li>
+<li><a href="https://go.dev/solutions/use-cases">Uses cases</a></li>
+<li><a href="https://github.com/avelino/awesome-go">Awesome-go</a></li>
+<li><a href="https://github.com/golang-standards/project-layout">Base project layout</a></li>
+</ul>
+</div>
+</div>
 
                     </main>
 
@@ -183,22 +210,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
