@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><li class="part-title">First words</li><li class="chapter-item "><a href="introduction/introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="introduction/recreatebook.html"><strong aria-hidden="true">1.1.</strong> How to recreate this book</a></li></ol></li><li class="chapter-item "><li class="part-title">Dev</li><li class="chapter-item "><a href="dev/go.html"><strong aria-hidden="true">2.</strong> Go</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="dev/go/pprof.html"><strong aria-hidden="true">2.1.</strong> PPROF</a></li></ol></li><li class="chapter-item "><li class="part-title">Ops</li><li class="chapter-item "><a href="ops/kubernetes.html"><strong aria-hidden="true">3.</strong> Kubernetes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/kubernetes/kind.html"><strong aria-hidden="true">3.1.</strong> Kind</a></li></ol></li><li class="chapter-item "><a href="ops/databases.html"><strong aria-hidden="true">4.</strong> Databases</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/sql.html"><strong aria-hidden="true">4.1.</strong> SQL</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/sql/postgres.html"><strong aria-hidden="true">4.1.1.</strong> Postgres</a></li></ol></li><li class="chapter-item "><a href="ops/nosql.html"><strong aria-hidden="true">4.2.</strong> NoSQL</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/nosql/dgraph.html"><strong aria-hidden="true">4.2.1.</strong> dgraph</a></li></ol></li></ol></li><li class="chapter-item "><a href="ops/testing.html"><strong aria-hidden="true">5.</strong> Testing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/testing/vegeta.html"><strong aria-hidden="true">5.1.</strong> Vegeta</a></li></ol></li><li class="chapter-item "><li class="part-title">General</li><li class="chapter-item "><a href="general/git.html"><strong aria-hidden="true">6.</strong> Git</a></li><li class="spacer"></li><li class="chapter-item affix "><a href="misc/contributors.html">Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><li class="part-title">First words</li><li class="chapter-item "><a href="introduction/introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="introduction/recreatebook.html"><strong aria-hidden="true">1.1.</strong> How to recreate this book</a></li></ol></li><li class="chapter-item "><li class="part-title">Dev</li><li class="chapter-item "><a href="dev/go.html"><strong aria-hidden="true">2.</strong> Go</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="dev/go/pprof.html"><strong aria-hidden="true">2.1.</strong> PPROF</a></li></ol></li><li class="chapter-item "><a href="dev/rust.html"><strong aria-hidden="true">3.</strong> Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="dev/rust/borrow-checker.html"><strong aria-hidden="true">3.1.</strong> borrow-checker</a></li></ol></li><li class="chapter-item "><li class="part-title">Ops</li><li class="chapter-item "><a href="ops/kubernetes.html"><strong aria-hidden="true">4.</strong> Kubernetes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/kubernetes/kind.html"><strong aria-hidden="true">4.1.</strong> Kind</a></li></ol></li><li class="chapter-item "><a href="ops/databases.html"><strong aria-hidden="true">5.</strong> Databases</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/sql.html"><strong aria-hidden="true">5.1.</strong> SQL</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/sql/postgres.html"><strong aria-hidden="true">5.1.1.</strong> Postgres</a></li></ol></li><li class="chapter-item "><a href="ops/nosql.html"><strong aria-hidden="true">5.2.</strong> NoSQL</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/nosql/dgraph.html"><strong aria-hidden="true">5.2.1.</strong> dgraph</a></li></ol></li></ol></li><li class="chapter-item "><a href="ops/testing.html"><strong aria-hidden="true">6.</strong> Testing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/testing/vegeta.html"><strong aria-hidden="true">6.1.</strong> Vegeta</a></li></ol></li><li class="chapter-item "><li class="part-title">General</li><li class="chapter-item "><a href="general/git.html"><strong aria-hidden="true">7.</strong> Git</a></li><li class="spacer"></li><li class="chapter-item affix "><a href="misc/contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -264,6 +264,132 @@ go tool pprof cpu.prof
 
 go-torch generate svg
 </code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="rust"><a class="header" href="#rust">Rust</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="example-of-borrow-checker---ownership-case"><a class="header" href="#example-of-borrow-checker---ownership-case">Example of borrow-checker - ownership case</a></h1>
+<h2 id="iterate-hashmap-and-update-value"><a class="header" href="#iterate-hashmap-and-update-value">Iterate HashMap and update value</a></h2>
+<p>Iterate over a HashMap and modify the values, but you need to be careful because Rust's borrow checker will prevent you from doing so in certain situations.</p>
+<p>One way to modify values in a HashMap while iterating over it is to use the HashMap::entry method to get a mutable reference to the value, and then modify the value using the mutable reference.</p>
+<p>Ok let's say i want to iterate through a map, here is a naive solution:</p>
+<div id="admonition-bug" class="admonition bug">
+<div class="admonition-title">
+<p>Bug</p>
+<p><a class="admonition-anchor-link" href="dev/rust/borrow-checker.html#admonition-bug"></a></p>
+</div>
+<div>
+<p>This will no work in rust, you can launch this code  here in this  browser and see the error:</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+fn main() {
+    let mut my_map = HashMap::new();
+
+    my_map.insert(&quot;foo&quot;, 1);
+    my_map.insert(&quot;bar&quot;, 2);
+
+    for (k, v) in my_map {
+        my_map[k] = v + 1;
+    }
+
+    println!(&quot;{:?}&quot;, my_map);
+}</code></pre></pre>
+</div>
+</div>
+<p>As you can see with <code>for (key, value) in my_map</code>  the ownership of <code>my_map</code> is moved due to the implicit call to <code>.into_iter()</code> with the <code>for ... in</code> statement.
+Then</p>
+<div id="admonition-info" class="admonition info">
+<div class="admonition-title">
+<p>Info</p>
+<p><a class="admonition-anchor-link" href="dev/rust/borrow-checker.html#admonition-info"></a></p>
+</div>
+<div>
+<p>my_map[k] = v + 1;<br />
+^^^^^^ value borrowed here after move</p>
+</div>
+</div>
+when we try to update the map we need to borrow the ownership of the map. But as the ownership to the map gas already been given to`.into_iter()` you're stuck
+<div id="admonition-note" class="admonition note">
+<div class="admonition-title">
+<p>Note</p>
+<p><a class="admonition-anchor-link" href="dev/rust/borrow-checker.html#admonition-note"></a></p>
+</div>
+<div>
+<p>You can also see that <code>HashMap&lt;&amp;str, i32&gt;</code>, which does not implement the <code>Copy</code> trait.
+Indeed if we could copy the hashmap we could iter throught the first and update the new one.</p>
+</div>
+</div>
+<p>So how can we do our stuff ?</p>
+<div id="admonition-success" class="admonition success">
+<div class="admonition-title">
+<p>Success</p>
+<p><a class="admonition-anchor-link" href="dev/rust/borrow-checker.html#admonition-success"></a></p>
+</div>
+<div>
+<p>use std::collections::HashMap;</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+fn main() {
+    let mut my_map = HashMap::new();
+
+    my_map.insert(&quot;foo&quot;, 1);
+    my_map.insert(&quot;bar&quot;, 2);
+
+    for (_k, v) in my_map.iter_mut() {
+        *v += 1;
+    }
+
+    println!(&quot;{:?}&quot;, my_map);
+}</code></pre></pre>
+<p>In this example, we first create a HashMap and insert two key-value pairs into it. Then, we use the iter_mut method to iterate over the map's values, getting mutable references to each value. We can then modify each value using the mutable reference.</p>
+<p>Note that we use the * operator to dereference the mutable reference and modify the value it points to.</p>
+</div>
+</div>
+<p>If you need to modify both the key and the value, you can use the HashMap::insert method to insert a new key-value pair and then remove the old key-value pair.</p>
+<p>Here's an example:</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+fn main() {
+    let mut my_map = HashMap::new();
+
+    my_map.insert(&quot;foo&quot;, 1);
+    my_map.insert(&quot;bar&quot;, 2);
+
+    let mut new_map = HashMap::new();
+
+    for (key, value) in my_map.iter_mut() {
+        let new_key = format!(&quot;new_{}&quot;, key);
+        let new_value = *value + 1;
+        new_map.insert(new_key, new_value);
+    }
+
+    for (key, value) in new_map {
+        my_map.remove(&amp;key.trim_start_matches(&quot;new_&quot;));
+        my_map.insert(&amp;key.trim_start_matches(&quot;new_&quot;), value);
+    }
+
+    println!(&quot;{:?}&quot;, my_map);
+}</code></pre></pre>
+<p>In this example, we create a new HashMap called new_map to hold the modified key-value pairs. We use the iter_mut method to iterate over the original HashMap's key-value pairs, creating new keys and values for each pair and inserting them into new_map.</p>
+<p>After we're done iterating, we iterate over new_map, removing the old key-value pairs from my_map and inserting the new key-value pairs. Note that we need to remove the old key-value pair before inserting the new one to avoid a collision.</p>
+<p>This approach works because we're not modifying the key or the value in place, but rather creating new ones and inserting them into a new HashMap.</p>
+<p><span style="color: hotpink">Booooo two loops ! Way to slow !</span> 😈</p>
+<p>you can modify the HashMap in place using the HashMap::retain method. The retain method takes a closure that operates on the key-value pairs of the HashMap and removes any pairs for which the closure returns false.</p>
+<pre><pre class="playground"><code class="language-rust">use std::collections::HashMap;
+
+fn main() {
+    let mut my_map = HashMap::new();
+
+    my_map.insert(&quot;foo&quot;, 1);
+    my_map.insert(&quot;bar&quot;, 2);
+
+    my_map.retain(|key, value| {
+        *value += 1;
+        key.starts_with(&quot;b&quot;)
+    });
+
+    println!(&quot;{:?}&quot;, my_map);
+}</code></pre></pre>
+<p>In this example, we use the retain method to modify the HashMap in place. The closure passed to retain takes mutable references to the key and the value, and we can modify the value using the mutable reference.</p>
+<p>The closure also returns a bool indicating whether the key-value pair should be kept or removed. In this example, we only keep the pairs whose keys start with the letter &quot;b&quot;. The pairs whose keys start with &quot;f&quot; are removed from the HashMap.</p>
+<p>Note that this approach works because we're modifying the HashMap in place, but we're not modifying the keys themselves. If you need to modify the keys as well, you'll need the solution with two loops.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="kubernetes"><a class="header" href="#kubernetes">Kubernetes</a></h1>
 <p>Kubernetes, also known as <span style="color: hotpink">K8s</span>, is an open-source system for automating deployment, scaling, and management of containerized applications.</p>
 <ul>

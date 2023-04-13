@@ -9,6 +9,8 @@
 
 - [Go](./dev/go.md)
   - [PPROF](./dev/go/pprof.md)
+- [Rust](./dev/rust.md)
+  - [borrow-checker](./dev/rust/borrow-checker.md)
 
 # Ops
 
