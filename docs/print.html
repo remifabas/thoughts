@@ -265,6 +265,32 @@ go tool pprof cpu.prof
 go-torch generate svg
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rust"><a class="header" href="#rust">Rust</a></h1>
+<details id="admonition-my-doc" class="admonition bug">
+<summary class="admonition-title">
+<p>My doc</p>
+<p><a class="admonition-anchor-link" href="dev/rust.html#admonition-my-doc"></a></p>
+</summary>
+<div>
+<p>Be carefull, not always up to date.</p>
+<ul>
+<li><a href="dev/rust/borrow-checker.html">borrow-checker</a></li>
+</ul>
+</div>
+</details>
+<div id="admonition-external-doc-and-links" class="admonition note">
+<div class="admonition-title">
+<p>External doc and links</p>
+<p><a class="admonition-anchor-link" href="dev/rust.html#admonition-external-doc-and-links"></a></p>
+</div>
+<div>
+<ul>
+<li><a href="https://www.rust-lang.org/">Main website</a></li>
+<li><a href="https://www.rust-lang.org/tools/install">Install</a></li>
+<li><a href="https://play.rust-lang.org/?version=stable&amp;mode=debug&amp;edition=2021">Playground</a></li>
+<li><a href="https://github.com/rust-unofficial/awesome-rust">Awesome-rust</a></li>
+</ul>
+</div>
+</div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="example-of-borrow-checker---ownership-case"><a class="header" href="#example-of-borrow-checker---ownership-case">Example of borrow-checker - ownership case</a></h1>
 <h2 id="iterate-hashmap-and-update-value"><a class="header" href="#iterate-hashmap-and-update-value">Iterate HashMap and update value</a></h2>
 <p>Iterate over a HashMap and modify the values, but you need to be careful because Rust's borrow checker will prevent you from doing so in certain situations.</p>
