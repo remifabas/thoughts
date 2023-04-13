@@ -71,7 +71,7 @@ Note that we use the * operator to dereference the mutable reference and modify 
 
 ~~~
 
-If you need to modify both the key and the value, you can use the HashMap::insert method to insert a new key-value pair and then remove the old key-value pair.
+We can create a new HashMap with the modified key-value pairs and replace the old HashMap with the new one.
 
 Here's an example:
 
@@ -84,32 +84,27 @@ fn main() {
     my_map.insert("foo", 1);
     my_map.insert("bar", 2);
 
-    let mut new_map = HashMap::new();
+    let new_map: HashMap<_, _> = my_map
+        .into_iter()
+        .map(|(key, mut value)| {
+            if key.starts_with("b") {
+                value += 1;
+            }
+            (key, value)
+        })
+        .collect();
 
-    for (key, value) in my_map.iter_mut() {
-        let new_key = format!("new_{}", key);
-        let new_value = *value + 1;
-        new_map.insert(new_key, new_value);
-    }
-
-    for (key, value) in new_map {
-        my_map.remove(&key.trim_start_matches("new_"));
-        my_map.insert(&key.trim_start_matches("new_"), value);
-    }
-
-    println!("{:?}", my_map);
+    println!("{:?}", new_map);
 }
 ```
 
-In this example, we create a new HashMap called new_map to hold the modified key-value pairs. We use the iter_mut method to iterate over the original HashMap's key-value pairs, creating new keys and values for each pair and inserting them into new_map.
+In this example, we use into_iter to consume the original HashMap and create a new one with modified key-value pairs. The closure passed to map takes ownership of each key-value pair, and modifies the value if the key starts with the letter "b". Finally, collect is called to create a new HashMap from the modified key-value pairs.
 
-After we're done iterating, we iterate over new_map, removing the old key-value pairs from my_map and inserting the new key-value pairs. Note that we need to remove the old key-value pair before inserting the new one to avoid a collision.
+~~~admonish note collapsible=true title="Booooo ! Way to slow with large Map! 😈😈"
+Note that this approach creates a new HashMap, so if the original HashMap is large, it may not be the most efficient solution. If efficiency is a concern, you can use a mutable HashMap and modify the values in place using HashMap::entry.
+~~~
 
-This approach works because we're not modifying the key or the value in place, but rather creating new ones and inserting them into a new HashMap.
-
-<span style="color: hotpink">Booooo two loops ! Way to slow !</span> 😈
-
-you can modify the HashMap in place using the HashMap::retain method. The retain method takes a closure that operates on the key-value pairs of the HashMap and removes any pairs for which the closure returns false.
+You can modify the HashMap in place using the HashMap::retain method. The retain method takes a closure that operates on the key-value pairs of the HashMap and removes any pairs for which the closure returns false.
 
 ```rust
 use std::collections::HashMap;
