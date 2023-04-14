@@ -85,7 +85,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item affix "><li class="part-title">First words</li><li class="chapter-item "><a href="introduction/introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="introduction/recreatebook.html"><strong aria-hidden="true">1.1.</strong> How to recreate this book</a></li></ol></li><li class="chapter-item "><li class="part-title">Dev</li><li class="chapter-item "><a href="dev/go.html"><strong aria-hidden="true">2.</strong> Go</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="dev/go/pprof.html"><strong aria-hidden="true">2.1.</strong> PPROF</a></li></ol></li><li class="chapter-item "><a href="dev/rust.html"><strong aria-hidden="true">3.</strong> Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="dev/rust/borrow-checker.html"><strong aria-hidden="true">3.1.</strong> borrow-checker</a></li></ol></li><li class="chapter-item "><li class="part-title">Ops</li><li class="chapter-item "><a href="ops/kubernetes.html"><strong aria-hidden="true">4.</strong> Kubernetes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/kubernetes/kind.html"><strong aria-hidden="true">4.1.</strong> Kind</a></li></ol></li><li class="chapter-item "><a href="ops/databases.html"><strong aria-hidden="true">5.</strong> Databases</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/sql.html"><strong aria-hidden="true">5.1.</strong> SQL</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/sql/postgres.html"><strong aria-hidden="true">5.1.1.</strong> Postgres</a></li></ol></li><li class="chapter-item "><a href="ops/nosql.html"><strong aria-hidden="true">5.2.</strong> NoSQL</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/nosql/dgraph.html"><strong aria-hidden="true">5.2.1.</strong> dgraph</a></li></ol></li></ol></li><li class="chapter-item "><a href="ops/testing.html"><strong aria-hidden="true">6.</strong> Testing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/testing/vegeta.html"><strong aria-hidden="true">6.1.</strong> Vegeta</a></li></ol></li><li class="chapter-item "><li class="part-title">General</li><li class="chapter-item "><a href="general/git.html"><strong aria-hidden="true">7.</strong> Git</a></li><li class="spacer"></li><li class="chapter-item affix "><a href="misc/contributors.html">Contributors</a></li></ol>
+                <ol class="chapter"><li class="chapter-item affix "><li class="part-title">First words</li><li class="chapter-item "><a href="introduction/introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="introduction/recreatebook.html"><strong aria-hidden="true">1.1.</strong> How to recreate this book</a></li></ol></li><li class="chapter-item "><li class="part-title">Dev</li><li class="chapter-item "><a href="dev/go.html"><strong aria-hidden="true">2.</strong> Go</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="dev/go/pprof.html"><strong aria-hidden="true">2.1.</strong> PPROF</a></li></ol></li><li class="chapter-item "><a href="dev/rust.html"><strong aria-hidden="true">3.</strong> Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="dev/rust/borrow-checker.html"><strong aria-hidden="true">3.1.</strong> borrow-checker</a></li></ol></li><li class="chapter-item "><li class="part-title">Ops</li><li class="chapter-item "><a href="ops/kubernetes.html"><strong aria-hidden="true">4.</strong> Kubernetes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/kubernetes/architecture_overview.html"><strong aria-hidden="true">4.1.</strong> Architecture Overview</a></li><li class="chapter-item "><a href="ops/kubernetes/kind.html"><strong aria-hidden="true">4.2.</strong> Kind</a></li></ol></li><li class="chapter-item "><a href="ops/databases.html"><strong aria-hidden="true">5.</strong> Databases</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/sql.html"><strong aria-hidden="true">5.1.</strong> SQL</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/sql/postgres.html"><strong aria-hidden="true">5.1.1.</strong> Postgres</a></li></ol></li><li class="chapter-item "><a href="ops/nosql.html"><strong aria-hidden="true">5.2.</strong> NoSQL</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/nosql/dgraph.html"><strong aria-hidden="true">5.2.1.</strong> dgraph</a></li></ol></li></ol></li><li class="chapter-item "><a href="ops/testing.html"><strong aria-hidden="true">6.</strong> Testing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="ops/testing/vegeta.html"><strong aria-hidden="true">6.1.</strong> Vegeta</a></li></ol></li><li class="chapter-item "><li class="part-title">General</li><li class="chapter-item "><a href="general/git.html"><strong aria-hidden="true">7.</strong> Git</a></li><li class="spacer"></li><li class="chapter-item affix "><a href="misc/contributors.html">Contributors</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -422,8 +422,152 @@ fn main() {
 <div style="break-before: page; page-break-before: always;"></div><h1 id="kubernetes"><a class="header" href="#kubernetes">Kubernetes</a></h1>
 <p>Kubernetes, also known as <span style="color: hotpink">K8s</span>, is an open-source system for automating deployment, scaling, and management of containerized applications.</p>
 <ul>
+<li><a href="ops/kubernetes/architecture_overview.html">Architecture overview</a></li>
 <li><a href="ops/kubernetes/kind.html">Create a local cluster with kind</a></li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="architecture-overview"><a class="header" href="#architecture-overview">Architecture Overview</a></h1>
+<details id="admonition-warning" class="admonition warning">
+<summary class="admonition-title">
+<p>Warning</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/architecture_overview.html#admonition-warning"></a></p>
+</summary>
+<div>
+<p>this documentation is a substrate / personal synthesis with less information than the official documentation of kuerbenetes which can be found <a href="https://kubernetes.io/docs/concepts/overview/components/">here</a></p>
+</div>
+</details>
+<p><img src="ops/kubernetes/img/components-of-kubernetes.svg" alt="Components" /></p>
+<details id="admonition-kubernetes-cluser" class="admonition info">
+<summary class="admonition-title">
+<p>Kubernetes Cluser</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/architecture_overview.html#admonition-kubernetes-cluser"></a></p>
+</summary>
+<div>
+<p>A Kubernetes cluster is a set of worker machines, called nodes, that run containerized applications.</p>
+<p>This cluster consist in two nodes family, the workers and the control-plane.</p>
+<ul>
+<li>The control plane handle and manage the worker nodes and the Pods in the cluster.</li>
+<li>The worker node(s) is the machine(s) where your applications workload will be deployed.</li>
+</ul>
+<p>Warning : the image here does not show that the control plane is also running in nodes !</p>
+</div>
+</details>
+<details id="admonition-pods-workload-" class="admonition bug">
+<summary class="admonition-title">
+<p>Pods, Workload ?</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/architecture_overview.html#admonition-pods-workload-"></a></p>
+</summary>
+<div>
+<p>About kubernetes wording:</p>
+<ul>
+<li>Workload: It's an app running on Kubernetes. It could be a single component or several that work together.</li>
+<li>Pods: Smallest deployable units of computing that you can create and manage in Kubernetes. It's a group of one or more containers.</li>
+</ul>
+</div>
+</details>
+<h2 id="control-plane"><a class="header" href="#control-plane">Control Plane</a></h2>
+<p>The control plane's components make global decisions about the cluster. Control plane components can be run on any machine in the cluster. However, for simplicity, set up scripts typically start all control plane components on the same machine, and do not run user containers on this machine.</p>
+<details id="admonition-kube-apiserver" class="admonition note">
+<summary class="admonition-title">
+<p>kube-apiserver</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/architecture_overview.html#admonition-kube-apiserver"></a></p>
+</summary>
+<div>
+<p>Expose the kubernetes API, front end for control plane. Kube-apiserver is designed to scale horizontally—that is, it scales by deploying more instances.
+Kube-api-server run in a pod, for each vm in control plane. You can find these pods with <code>kubectl get po -n kube-system | grep apiserver</code></p>
+</div>
+</details>
+<details id="admonition-etcd" class="admonition note">
+<summary class="admonition-title">
+<p>etcd</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/architecture_overview.html#admonition-etcd"></a></p>
+</summary>
+<div>
+<p>Consistent and highly-available key value store used as Kubernetes' backing store for all cluster data. This store run in multiples pods in control plane.
+You can find these pods with <code>kubectl get po -n kube-system | grep etcd</code></p>
+</div>
+</details>
+<details id="admonition-kube-scheduler" class="admonition note">
+<summary class="admonition-title">
+<p>kube-scheduler</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/architecture_overview.html#admonition-kube-scheduler"></a></p>
+</summary>
+<div>
+<p>Control plane component that watches for newly created Pods with no assigned node, and selects a node for them to run on.
+Factors taken into account for scheduling decisions include: individual and collective resource requirements, hardware/software/policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference, and deadlines.
+You can find these pods with <code>kubectl get po -n kube-system | grep scheduler</code></p>
+</div>
+</details>
+<details id="admonition-kube-controller-manager" class="admonition note">
+<summary class="admonition-title">
+<p>kube-controller-manager</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/architecture_overview.html#admonition-kube-controller-manager"></a></p>
+</summary>
+<div>
+<p>Control plane component that runs <span style="color: hotpink">controller</span> processes. I will explain <a href="https://iximiuz.com/en/posts/kubernetes-operator-pattern/">operator</a> and <a href="https://kubernetes.io/docs/concepts/architecture/controller/">controller</a> later.
+Some types of these controllers are:</p>
+<ul>
+<li>Node controller: Responsible for noticing and responding when nodes go down.</li>
+<li>Job controller: Watches for Job objects that represent one-off tasks, then creates Pods to run those tasks to completion.</li>
+<li>EndpointSlice controller: Populates EndpointSlice objects (to provide a link between Services and Pods).</li>
+<li>ServiceAccount controller: Create default ServiceAccounts for new namespaces.</li>
+</ul>
+<p><code>kubectl get po -n kube-system | grep controller-manager</code></p>
+</div>
+</details>
+<details id="admonition-cloud-controller-manager" class="admonition note">
+<summary class="admonition-title">
+<p>cloud-controller-manager</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/architecture_overview.html#admonition-cloud-controller-manager"></a></p>
+</summary>
+<div>
+<p>The cloud controller manager lets you link your cluster into your cloud provider's API, and separates out the components that interact with that cloud platform from components that only interact with your cluster.</p>
+</div>
+</details>
+<h2 id="nodes"><a class="header" href="#nodes">Nodes</a></h2>
+<p>Node components run on every node, maintaining running pods and providing the Kubernetes runtime environment.</p>
+<details id="admonition-kubelet" class="admonition note">
+<summary class="admonition-title">
+<p>kubelet</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/architecture_overview.html#admonition-kubelet"></a></p>
+</summary>
+<div>
+<p>Agent that runs on each node in the cluster. It makes sure that containers are running in a Pod.</p>
+<p>Kubelet run as process on each node in the cluster, rather than running inside a pod like etcd, apiserver.</p>
+</div>
+</details>
+<details id="admonition-kube-proxy" class="admonition note">
+<summary class="admonition-title">
+<p>kube-proxy</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/architecture_overview.html#admonition-kube-proxy"></a></p>
+</summary>
+<div>
+<p>kube-proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes <a href="ops/kubernetes/services.html">Service</a> concept.</p>
+<p>kube-proxy maintains network rules on nodes. These network rules allow network communication to your Pods from network sessions inside or outside of your cluster.</p>
+<p>kube-proxy uses the operating system packet filtering layer if there is one and it's available. Otherwise, kube-proxy forwards the traffic itself.</p>
+</div>
+</details>
+<details id="admonition-container-runtime" class="admonition note">
+<summary class="admonition-title">
+<p>Container runtime</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/architecture_overview.html#admonition-container-runtime"></a></p>
+</summary>
+<div>
+<p>The container runtime is the software that is responsible for running containers.</p>
+<p>Kubernetes supports container runtimes such as containerd, CRI-O, and any other implementation of the Kubernetes <a href="https://github.com/kubernetes/community/blob/master/contributors/devel/sig-node/container-runtime-interface.md">CRI</a> (Container Runtime Interface).</p>
+</div>
+</details>
+<h2 id="addons"><a class="header" href="#addons">Addons</a></h2>
+<p>Addons use Kubernetes resources (DaemonSet, Deployment, etc) to implement cluster features. Because these are providing cluster-level features, namespaced resources for addons belong within the kube-system namespace. List of <a href="https://kubernetes.io/docs/concepts/cluster-administration/addons/">addons</a></p>
+<details id="admonition-dns" class="admonition note">
+<summary class="admonition-title">
+<p>DNS</p>
+<p><a class="admonition-anchor-link" href="ops/kubernetes/architecture_overview.html#admonition-dns"></a></p>
+</summary>
+<div>
+<p>While the other addons are not strictly required, all Kubernetes clusters should have <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">cluster DNS</a>, as many examples rely on it.</p>
+<p>Cluster DNS is a DNS server, in addition to the other DNS server(s) in your environment, which serves DNS records for Kubernetes services.</p>
+</div>
+</details>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="kind"><a class="header" href="#kind">Kind</a></h1>
 <div id="admonition-note" class="admonition note">
 <div class="admonition-title">
@@ -470,7 +614,6 @@ nodes:
   - role: worker
   - role: worker
 </code></pre>
-<p>`</p>
 </div>
 </details>
 <p>How to <span style="color: hotpink">create</span> a cluster from a config file:</p>

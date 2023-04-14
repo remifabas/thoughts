@@ -16,6 +16,7 @@
 
 - [Kubernetes](./ops/kubernetes.md)
 
+  - [Architecture Overview](./ops/kubernetes/architecture_overview.md)
   - [Kind](./ops/kubernetes/kind.md)
 
 - [Databases](./ops/databases.md)

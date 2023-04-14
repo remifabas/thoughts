@@ -13,7 +13,7 @@ Other way: [here](https://kind.sigs.k8s.io/docs/user/quick-start#installation)
 
 ```
 
-````admonish example title="config file" collapsible=true
+~~~admonish example title="config file" collapsible=true
 
 ```yaml
 kind: Cluster
@@ -35,7 +35,7 @@ nodes:
   - role: worker
   - role: worker
 ```
-````
+~~~
 
 How to <span style="color: hotpink">create</span> a cluster from a config file:
 
