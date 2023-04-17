@@ -473,7 +473,8 @@ fn main() {
 </summary>
 <div>
 <p>Expose the kubernetes API, front end for control plane. Kube-apiserver is designed to scale horizontally—that is, it scales by deploying more instances.
-Kube-api-server run in a pod, for each vm in control plane. You can find these pods with <code>kubectl get po -n kube-system | grep apiserver</code></p>
+Kube-api-server run in a pod, for each vm in control plane. You can find these pods with </p>
+<p><code>kubectl get po -o wide -n kube-system | grep apiserver</code></p>
 </div>
 </details>
 <details id="admonition-etcd" class="admonition note">
@@ -483,7 +484,8 @@ Kube-api-server run in a pod, for each vm in control plane. You can find these p
 </summary>
 <div>
 <p>Consistent and highly-available key value store used as Kubernetes' backing store for all cluster data. This store run in multiples pods in control plane.
-You can find these pods with <code>kubectl get po -n kube-system | grep etcd</code></p>
+You can find these pods with<br />
+<code>kubectl get po -o wide -n kube-system | grep etcd</code></p>
 </div>
 </details>
 <details id="admonition-kube-scheduler" class="admonition note">
@@ -494,7 +496,8 @@ You can find these pods with <code>kubectl get po -n kube-system | grep etcd</co
 <div>
 <p>Control plane component that watches for newly created Pods with no assigned node, and selects a node for them to run on.
 Factors taken into account for scheduling decisions include: individual and collective resource requirements, hardware/software/policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference, and deadlines.
-You can find these pods with <code>kubectl get po -n kube-system | grep scheduler</code></p>
+You can find these pods with<br />
+<code>kubectl get po -o wide -n kube-system | grep scheduler</code></p>
 </div>
 </details>
 <details id="admonition-kube-controller-manager" class="admonition note">
@@ -511,7 +514,7 @@ Some types of these controllers are:</p>
 <li>EndpointSlice controller: Populates EndpointSlice objects (to provide a link between Services and Pods).</li>
 <li>ServiceAccount controller: Create default ServiceAccounts for new namespaces.</li>
 </ul>
-<p><code>kubectl get po -n kube-system | grep controller-manager</code></p>
+<p><code>kubectl get po -o wide -n kube-system | grep controller-manager</code></p>
 </div>
 </details>
 <details id="admonition-cloud-controller-manager" class="admonition note">
@@ -544,6 +547,7 @@ Some types of these controllers are:</p>
 <p>kube-proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes <a href="ops/kubernetes/services.html">Service</a> concept.</p>
 <p>kube-proxy maintains network rules on nodes. These network rules allow network communication to your Pods from network sessions inside or outside of your cluster.</p>
 <p>kube-proxy uses the operating system packet filtering layer if there is one and it's available. Otherwise, kube-proxy forwards the traffic itself.</p>
+<p><code>kubectl get po -o wide -n kube-system | grep kube-proxy</code></p>
 </div>
 </details>
 <details id="admonition-container-runtime" class="admonition note">
