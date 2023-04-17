@@ -28,18 +28,22 @@ The control plane's components make global decisions about the cluster. Control 
 
 ~~~admonish tips title="kube-apiserver" collapsible=true
 Expose the kubernetes API, front end for control plane. Kube-apiserver is designed to scale horizontally—that is, it scales by deploying more instances.
-Kube-api-server run in a pod, for each vm in control plane. You can find these pods with `kubectl get po -n kube-system | grep apiserver`
+Kube-api-server run in a pod, for each vm in control plane. You can find these pods with 
+
+`kubectl get po -o wide -n kube-system | grep apiserver`
 ~~~
 
 ~~~admonish tips title="etcd" collapsible=true
 Consistent and highly-available key value store used as Kubernetes' backing store for all cluster data. This store run in multiples pods in control plane.
-You can find these pods with `kubectl get po -n kube-system | grep etcd`
+You can find these pods with  
+`kubectl get po -o wide -n kube-system | grep etcd`
 ~~~
 
 ~~~admonish tips title="kube-scheduler" collapsible=true
 Control plane component that watches for newly created Pods with no assigned node, and selects a node for them to run on.
 Factors taken into account for scheduling decisions include: individual and collective resource requirements, hardware/software/policy constraints, affinity and anti-affinity specifications, data locality, inter-workload interference, and deadlines.
-You can find these pods with `kubectl get po -n kube-system | grep scheduler`
+You can find these pods with  
+`kubectl get po -o wide -n kube-system | grep scheduler`
 ~~~
 
 ~~~admonish tips title="kube-controller-manager" collapsible=true
@@ -51,7 +55,7 @@ Some types of these controllers are:
 - EndpointSlice controller: Populates EndpointSlice objects (to provide a link between Services and Pods).
 - ServiceAccount controller: Create default ServiceAccounts for new namespaces.
 
-`kubectl get po -n kube-system | grep controller-manager`
+`kubectl get po -o wide -n kube-system | grep controller-manager`
 ~~~
 
 ~~~admonish tips title="cloud-controller-manager" collapsible=true
@@ -75,6 +79,8 @@ kube-proxy is a network proxy that runs on each node in your cluster, implementi
 kube-proxy maintains network rules on nodes. These network rules allow network communication to your Pods from network sessions inside or outside of your cluster.
 
 kube-proxy uses the operating system packet filtering layer if there is one and it's available. Otherwise, kube-proxy forwards the traffic itself.
+
+`kubectl get po -o wide -n kube-system | grep kube-proxy`
 ~~~
 
 ~~~admonish tips title="Container runtime" collapsible=true
