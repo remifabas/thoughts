@@ -29,6 +29,8 @@
 - [Testing](./ops/testing.md)
   - [Vegeta](./ops/testing/vegeta.md)
 
+- [GPG-PGP](./ops/gpg-pgp.md)
+
 # General
 
 - [Git](./general/git.md)
