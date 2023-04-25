@@ -169,6 +169,9 @@ content-type: application/json
   &quot;query&quot;: &quot;query{\n  rmfs(){\n    edges{\n      node{\n        id\n        name\n      }\n    }\n  }\n}&quot;
 }
 </code></pre>
+<h2 id="ramp-up"><a class="header" href="#ramp-up">ramp up</a></h2>
+<pre><code class="language-bash">echo &quot;GET &lt;http://:6060&gt;&quot; | ./vegeta attack -timeout=6s -duration=20s -plan=&quot;100@2s 200@4s 400@6s 500@8s 600@10s&quot; | tee result.bin | ./vegeta report
+</code></pre>
 
                     </main>
 
