@@ -3,6 +3,7 @@
 ```admonish bug collapsible=true title="My doc"
 Be carefull, not always up to date.
 - [borrow-checker](rust/borrow-checker.md)
+- [async introduction with tokio](rust/async-intro.md)
 ```
 
 ```admonish tips title="External doc and links"
