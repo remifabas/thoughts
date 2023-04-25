@@ -11,6 +11,7 @@
   - [PPROF](./dev/go/pprof.md)
 - [Rust](./dev/rust.md)
   - [borrow-checker](./dev/rust/borrow-checker.md)
+  - [Async introduction](./dev/rust/async-intro.md)
 
 # Ops
 
@@ -30,6 +31,7 @@
   - [Vegeta](./ops/testing/vegeta.md)
 
 - [GPG-PGP & SOPS](./ops/gpg-pgp.md)
+- [Linux](./ops/linux.md)
 
 # General
 

@@ -15,3 +15,12 @@ Be carefull, not always up to date.
 - [Base project layout](https://github.com/golang-standards/project-layout)
 
 ```
+
+- %s – Print a string.
+- %d – print an integer
+- %f – floating point number.
+- %v – print values of a struct.
+- %+v – print struct fields and values.
+- %t – print Boolean.
+- %b – print binary value.
+- %e – scientific notation
