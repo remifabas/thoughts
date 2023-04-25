@@ -10,7 +10,8 @@
 - [Go](./dev/go.md)
   - [PPROF](./dev/go/pprof.md)
 - [Rust](./dev/rust.md)
-  - [borrow-checker](./dev/rust/borrow-checker.md)
+  - [Intro to ownership - borrow-checker](./dev/rust/intro-borrow.md)
+  - [borrow-checker in maps](./dev/rust/borrow-checker.md)
   - [Async introduction](./dev/rust/async-intro.md)
 
 # Ops
