@@ -1,5 +1,12 @@
 # Git
 
+## Usefull alias
+
+```
+git config --global alias.undo 'reset --soft HEAD^'
+git config --global alias.lg "log --color --graph --pretty=format:'%C(#dc322f)%h%C(#b58900)%d %C(#eee8d5)%s %C(#dc322f)| %C(#586f75)%cr %C(#dc322f)| %C(#586e75)%an%Creset' --abbrev-commit"
+```
+
 ## Gitlab
 
 First you need to create a personal access token
