@@ -10,11 +10,13 @@ git config --global alias.lg "log --color --graph --pretty=format:'%C(#dc322f)%h
 ## Gitlab
 
 First you need to create a personal access token
+
+```git
 git config --global credential.helper store
 git pull
+```
 
-it will ask you your username and password (use your pat). Then there is no need to enter user/password
-
+It will ask you your username and password (use your pat). Then there is no need to enter user/password
 
 ## Pre-commit
 

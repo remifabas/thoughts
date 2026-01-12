@@ -37,7 +37,6 @@
 # General
 
 - [Git](./general/git.md)
-
 ---
 
 [Contributors](misc/contributors.md)
