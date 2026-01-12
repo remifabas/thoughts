@@ -37,6 +37,10 @@
 # General
 
 - [Git](./general/git.md)
+
+# Not IT related
+
+- [About heroes](./notit/heroes.md)
 ---
 
 [Contributors](misc/contributors.md)
