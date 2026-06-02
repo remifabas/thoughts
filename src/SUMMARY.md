@@ -38,9 +38,18 @@
 
 - [Git](./general/git.md)
 
-# Not IT related
+# AI Philo slop
 
 - [About heroes](./notit/heroes.md)
 ---
+
+# 3D printing
+
+- [Orca Slicer](./orcaslicer/orcaslicer.md)
+  - [quality](./orcaslicer/quality.md)
+  - [strength](./orcaslicer/strength.md)
+  - [speed](./orcaslicer/speed.md)
+  - [support](./orcaslicer/support.md)
+  - [others](./orcaslicer/others.md)
 
 [Contributors](misc/contributors.md)
