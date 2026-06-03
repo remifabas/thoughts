@@ -41,7 +41,7 @@
 # AI Philo slop
 
 - [About heroes](./notit/heroes.md)
----
+
 
 # 3D printing
 
@@ -51,5 +51,12 @@
   - [speed](./orcaslicer/speed.md)
   - [support](./orcaslicer/support.md)
   - [others](./orcaslicer/others.md)
+- [ObscuraNox](./obscuranox/obscuranox.md)
+  - [quality](./obscuranox/quality.md)
+  - [strength](./obscuranox/strength.md)
+  - [speed](./obscuranox/speed.md)
+  - [support](./obscuranox/support.md)
+  - [filaments](./obscuranox/filaments.md)
+---
 
 [Contributors](misc/contributors.md)

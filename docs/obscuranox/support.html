@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js latte">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>support - thoughts</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="../././mdbook-admonish.css">
+        <link rel="stylesheet" href=".././theme/catppuccin.css">
+        <link rel="stylesheet" href=".././theme/catppuccin-highlight.css">
+
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "frappe" : "latte";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('latte')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item affix "><li class="part-title">First words</li><li class="chapter-item "><a href="../introduction/introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../introduction/recreatebook.html"><strong aria-hidden="true">1.1.</strong> How to recreate this book</a></li></ol></li><li class="chapter-item "><li class="part-title">Dev</li><li class="chapter-item "><a href="../dev/go.html"><strong aria-hidden="true">2.</strong> Go</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../dev/go/pprof.html"><strong aria-hidden="true">2.1.</strong> PPROF</a></li></ol></li><li class="chapter-item "><a href="../dev/rust.html"><strong aria-hidden="true">3.</strong> Rust</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../dev/rust/intro-borrow.html"><strong aria-hidden="true">3.1.</strong> Intro to ownership - borrow-checker</a></li><li class="chapter-item "><a href="../dev/rust/borrow-checker.html"><strong aria-hidden="true">3.2.</strong> borrow-checker in maps</a></li><li class="chapter-item "><a href="../dev/rust/async-intro.html"><strong aria-hidden="true">3.3.</strong> Async introduction</a></li></ol></li><li class="chapter-item "><li class="part-title">Ops</li><li class="chapter-item "><a href="../ops/kubernetes.html"><strong aria-hidden="true">4.</strong> Kubernetes</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ops/kubernetes/architecture_overview.html"><strong aria-hidden="true">4.1.</strong> Architecture Overview</a></li><li class="chapter-item "><a href="../ops/kubernetes/kind.html"><strong aria-hidden="true">4.2.</strong> Kind</a></li></ol></li><li class="chapter-item "><a href="../ops/databases.html"><strong aria-hidden="true">5.</strong> Databases</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ops/sql.html"><strong aria-hidden="true">5.1.</strong> SQL</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ops/sql/postgres.html"><strong aria-hidden="true">5.1.1.</strong> Postgres</a></li></ol></li><li class="chapter-item "><a href="../ops/nosql.html"><strong aria-hidden="true">5.2.</strong> NoSQL</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ops/nosql/dgraph.html"><strong aria-hidden="true">5.2.1.</strong> dgraph</a></li></ol></li></ol></li><li class="chapter-item "><a href="../ops/testing.html"><strong aria-hidden="true">6.</strong> Testing</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../ops/testing/vegeta.html"><strong aria-hidden="true">6.1.</strong> Vegeta</a></li></ol></li><li class="chapter-item "><a href="../ops/gpg-pgp.html"><strong aria-hidden="true">7.</strong> GPG-PGP & SOPS</a></li><li class="chapter-item "><a href="../ops/linux.html"><strong aria-hidden="true">8.</strong> Linux</a></li><li class="chapter-item affix "><li class="part-title">General</li><li class="chapter-item "><a href="../general/git.html"><strong aria-hidden="true">9.</strong> Git</a></li><li class="chapter-item affix "><li class="part-title">AI Philo slop</li><li class="chapter-item "><a href="../notit/heroes.html"><strong aria-hidden="true">10.</strong> About heroes</a></li><li class="chapter-item affix "><li class="part-title">3D printing</li><li class="chapter-item "><a href="../orcaslicer/orcaslicer.html"><strong aria-hidden="true">11.</strong> Orca Slicer</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../orcaslicer/quality.html"><strong aria-hidden="true">11.1.</strong> quality</a></li><li class="chapter-item "><a href="../orcaslicer/strength.html"><strong aria-hidden="true">11.2.</strong> strength</a></li><li class="chapter-item "><a href="../orcaslicer/speed.html"><strong aria-hidden="true">11.3.</strong> speed</a></li><li class="chapter-item "><a href="../orcaslicer/support.html"><strong aria-hidden="true">11.4.</strong> support</a></li><li class="chapter-item "><a href="../orcaslicer/others.html"><strong aria-hidden="true">11.5.</strong> others</a></li></ol></li><li class="chapter-item expanded "><a href="../obscuranox/obscuranox.html"><strong aria-hidden="true">12.</strong> ObscuraNox</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item "><a href="../obscuranox/quality.html"><strong aria-hidden="true">12.1.</strong> quality</a></li><li class="chapter-item "><a href="../obscuranox/strength.html"><strong aria-hidden="true">12.2.</strong> strength</a></li><li class="chapter-item "><a href="../obscuranox/speed.html"><strong aria-hidden="true">12.3.</strong> speed</a></li><li class="chapter-item expanded "><a href="../obscuranox/support.html" class="active"><strong aria-hidden="true">12.4.</strong> support</a></li><li class="chapter-item "><a href="../obscuranox/filaments.html"><strong aria-hidden="true">12.5.</strong> filaments</a></li><li class="spacer"></li></ol></li><li class="chapter-item "><a href="../misc/contributors.html">Contributors</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="latte">Latte (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="frappe">Frappé</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="macchiato">Macchiato</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mocha">Mocha</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">thoughts</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/remifabas/thoughts" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p>Nous arrivons sur l’onglet le plus célèbre et le plus copié des profils <strong>ObscuraNox (V2.0)</strong> : l'onglet <strong>Support</strong>.</p>
+<p>C'est ici qu'il applique sa fameuse règle de <strong>synchronisation mathématique</strong> entre la hauteur de couche (onglet <em>Quality</em>) et l'espace vide sous la figurine. Son objectif est d'obtenir des supports en arbre stables qui enveloppent parfaitement l'infanterie fine, mais qui se détachent d'un simple coup de pince, laissant un dessous de pièce ultra-propre (sans l'effet &quot;spaghetti&quot; habituel du FDM).</p>
+<p>Voici le tableau récapitulatif complet au format Markdown pour les deux buses.</p>
+<hr />
+<h3 id="-tableau-récapitulatif--onglet-support-obscuranox-v20"><a class="header" href="#-tableau-récapitulatif--onglet-support-obscuranox-v20">📊 Tableau Récapitulatif : Onglet &quot;Support&quot; (ObscuraNox V2.0)</a></h3>
+<div class="table-wrapper"><table><thead><tr><th>Paramètre OrcaSlicer (Field)</th><th>Configuration Buse 0.2 mm</th><th>Configuration Buse 0.4 mm</th><th>Logique et Objectif ObscuraNox</th></tr></thead><tbody>
+<tr><td><strong>Enable support</strong></td><td><code>Coché</code></td><td><code>Coché</code></td><td>Indispensable pour l'infanterie fine (armes, capes, mentons).</td></tr>
+<tr><td><strong>Type</strong></td><td><code>Tree</code></td><td><code>Tree</code></td><td>Les supports en arbre sont obligatoires pour contourner la figurine.</td></tr>
+<tr><td><strong>Style</strong></td><td><code>Tree Slim</code></td><td><code>Tree Strong</code> / <code>Organic</code></td><td><em>Slim</em> pour la buse 0.2 (évite de noyer la pièce). <em>Strong</em> pour la buse 0.4 (stabilité).</td></tr>
+<tr><td><strong>Support placement</strong></td><td><code>Everywhere</code></td><td><code>Everywhere</code></td><td>Permet d'aller soutenir les détails hauts (mains, visages) depuis le corps si besoin.</td></tr>
+<tr><td><strong>Top Z distance</strong></td><td><strong><code>0.12 mm</code></strong></td><td><strong><code>0.20 mm</code></strong></td><td><strong>CRITIQUE.</strong> Aligné sur la hauteur de couche. Permet un décollage propre sans fusionner.</td></tr>
+<tr><td><strong>Bottom Z distance</strong></td><td><code>0.12 mm</code></td><td><code>0.20 mm</code></td><td>Même valeur que le Top Z pour protéger les zones basses de la figurine.</td></tr>
+<tr><td><strong>Base pattern spacing</strong></td><td><code>2.0 mm</code></td><td><code>2.5 mm</code></td><td>Espacement de la structure interne des branches pour économiser du plastique.</td></tr>
+<tr><td><strong>Top interface layers</strong></td><td><code>3</code></td><td><code>3</code></td><td>Crée un &quot;plafond&quot; dense à 3 couches pour que la figurine repose sur un lit plat.</td></tr>
+<tr><td><strong>Interface pattern</strong></td><td><code>Grid</code></td><td><code>Grid</code></td><td>La grille offre le support le plus homogène pour les formes organiques.</td></tr>
+<tr><td><strong>Top interface spacing</strong></td><td><strong><code>0.20 mm</code></strong></td><td><strong><code>0.40 mm</code></strong></td><td><strong>Resserré.</strong> Évite que les micro-membres (doigts, pointes) ne tombent dans les trous du support.</td></tr>
+<tr><td><strong>Tree branch diameter</strong></td><td><strong><code>1.2 mm</code></strong></td><td><strong><code>2.5 mm</code></strong></td><td>Des branches très fines pour la buse 0.2 mm pour un retrait chirurgical.</td></tr>
+<tr><td><strong>Tree branch angle</strong></td><td><code>45°</code></td><td><code>45°</code></td><td>Donne de la souplesse aux branches pour slalomer autour des membres.</td></tr>
+<tr><td><strong>Support wall loops</strong></td><td><strong><code>1</code></strong></td><td><strong><code>1</code></strong></td><td><strong>Crucial.</strong> Une seule paroi rend la branche facile à écraser et casser lors du nettoyage.</td></tr>
+</tbody></table>
+</div>
+<hr />
+<h3 id="-les-secrets-mathématiques-dobscuranox-sur-les-supports"><a class="header" href="#-les-secrets-mathématiques-dobscuranox-sur-les-supports">🧐 Les secrets mathématiques d'ObscuraNox sur les supports</a></h3>
+<h4 id="1-la-formule-magique-de-la-top-z-distance"><a class="header" href="#1-la-formule-magique-de-la-top-z-distance">1. La formule magique de la &quot;Top Z distance&quot;</a></h4>
+<p>C'est le cœur de sa méthodologie. La distance Z doit être un <strong>multiple exact</strong> de votre hauteur de couche.</p>
+<ul>
+<li>Avec sa configuration à <strong>0.06 mm</strong> de hauteur de couche (buse 0.2), il règle le Top Z sur <strong>0.12 mm</strong> (soit exactement 2 couches vides). Le plastique se dépose délicatement sans coller.</li>
+<li>Si vous décidiez d'imprimer en <strong>0.05 mm</strong>, vous devriez régler ce paramètre sur <strong>0.10 mm</strong> (2 couches vides) ou <strong>0.15 mm</strong> (3 couches vides). Ne laissez jamais une valeur qui n'est pas un multiple exact, sinon le slicer va arrondir et créer des imperfections.</li>
+</ul>
+<h4 id="2-pourquoi-le-top-interface-spacing-à-020-mm-change-tout-"><a class="header" href="#2-pourquoi-le-top-interface-spacing-à-020-mm-change-tout-">2. Pourquoi le &quot;Top interface spacing&quot; à 0.20 mm change tout ?</a></h4>
+<p>Sur les profils standards, l'espacement de l'interface est souvent de 0.5 mm ou plus. Pour une buse de 0.2 mm qui imprime un bras de 0.8 mm d'épaisseur, le bras va &quot;tomber&quot; entre les lignes du support et pendre dans le vide. En resserrant l'interface à <strong>0.20 mm</strong>, ObscuraNox crée un plateau quasi-plein. Le dessous des capes et des aisselles ressort lisse, limitant le travail de ponçage avant la peinture.</p>
+<h4 id="3-support-wall-loops-réglé-sur-1"><a class="header" href="#3-support-wall-loops-réglé-sur-1">3. Support Wall Loops réglé sur 1</a></h4>
+<p>Par défaut, les logiciels mettent 2 parois sur les supports pour qu'ils soient solides. ObscuraNox force la valeur à <strong>1</strong>. Associé au style <em>Tree Slim</em>, cela donne des branches qui ressemblent à des pailles très fines. Elles ont assez de force verticale pour porter le poids d'un bras en plastique, mais aucune résistance latérale : il vous suffit de pincer le support avec vos doigts pour qu'il s'effondre et libère la figurine sans aucun effort.</p>
+<hr />
+<p>Prêt à finir cette numérisation de profil avec le dernier onglet, <strong>Others</strong> (Brim de sécurité pour stabiliser ces arbres très fins) ?</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../obscuranox/speed.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../obscuranox/filaments.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../obscuranox/speed.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../obscuranox/filaments.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script type="text/javascript">
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </body>
+</html>
