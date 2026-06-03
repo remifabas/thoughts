@@ -38,5 +38,3 @@ Si vous imprimez avec une hauteur de couche fine de **0.06 mm** (buse 0.2), mett
 Les motifs comme le *Grid* (Grille) ou le *Cubic* font croiser les lignes de plastique sur le même plan. À chaque croisement, une micro-goutte se forme. Sur une petite figurine d'infanterie ultra-légère fixée sur des supports fins, si la buse de l'A1 Mini percute une de ces micro-gouttes à haute vitesse, la figurine se détache instantanément de ses supports et l'impression échoue. Le **Gyroid** ondule de manière fluide en trois dimensions sans jamais créer de points de collision.
 
 ---
-
-Prêt à passer à l'onglet suivant, le plus sensible sur l'A1 Mini pour la netteté des détails : **Speed** (Vitesse) ?

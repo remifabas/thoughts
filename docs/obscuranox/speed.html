@@ -176,7 +176,6 @@
 <h4 id="2-limportance-capitale-des-accélérations-basses"><a class="header" href="#2-limportance-capitale-des-accélérations-basses">2. L'importance capitale des accélérations basses</a></h4>
 <p>L'A1 Mini utilise un système &quot;Bed Slinger&quot; (le plateau bouge d'avant en arrière). Si la machine change de direction avec une accélération d'origine à 5000 mm/s², la figurine (qui ne tient que par de fins supports en arbre) va subir des micro-fouettements. En bridant l'accélération de la paroi extérieure à <strong>500 mm/s²</strong>, la tête ralentit en douceur avant chaque virage. Les arrêtes des épées restent tranchantes et les visages parfaitement nets.</p>
 <hr />
-<p>Prêt à passer au gros morceau du profil ObscuraNox : l'onglet <strong>Support</strong> (les réglages chirurgicaux pour détacher les arbres sans outils) ?</p>
 
                     </main>
 
@@ -207,22 +206,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script type="text/javascript">
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 

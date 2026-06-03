@@ -22,5 +22,3 @@ Ce format intègre les valeurs pour la buse de **0.2 mm** (détail chirurgical) 
 | **Elephant foot compensation**  | `0.15 mm`                 | `0.15 mm`                 | Corrige le gonflement des pieds dû à la première couche épaisse à 0.20 mm.       |
 
 ---
-
-Souhaitez-vous que nous passions à la synthèse de l'onglet suivant selon ObscuraNox ?

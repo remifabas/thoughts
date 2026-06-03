@@ -33,5 +33,3 @@ Bien que les chiffres du tableau soient bas, ObscuraNox rappelle souvent que c'e
 L'A1 Mini utilise un système "Bed Slinger" (le plateau bouge d'avant en arrière). Si la machine change de direction avec une accélération d'origine à 5000 mm/s², la figurine (qui ne tient que par de fins supports en arbre) va subir des micro-fouettements. En bridant l'accélération de la paroi extérieure à **500 mm/s²**, la tête ralentit en douceur avant chaque virage. Les arrêtes des épées restent tranchantes et les visages parfaitement nets.
 
 ---
-
-Prêt à passer au gros morceau du profil ObscuraNox : l'onglet **Support** (les réglages chirurgicaux pour détacher les arbres sans outils) ?

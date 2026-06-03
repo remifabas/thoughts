@@ -1,4 +1,4 @@
-Nous arrivons sur l’onglet le plus célèbre et le plus copié des profils **ObscuraNox (V2.0)** : l'onglet **Support**.
+# **Support**.
 
 C'est ici qu'il applique sa fameuse règle de **synchronisation mathématique** entre la hauteur de couche (onglet *Quality*) et l'espace vide sous la figurine. Son objectif est d'obtenir des supports en arbre stables qui enveloppent parfaitement l'infanterie fine, mais qui se détachent d'un simple coup de pince, laissant un dessous de pièce ultra-propre (sans l'effet "spaghetti" habituel du FDM).
 
@@ -6,7 +6,7 @@ Voici le tableau récapitulatif complet au format Markdown pour les deux buses.
 
 ---
 
-### 📊 Tableau Récapitulatif : Onglet "Support" (ObscuraNox V2.0)
+### Tableau Récapitulatif : Onglet "Support" (ObscuraNox V2.0)
 
 | Paramètre OrcaSlicer (Field) | Configuration Buse 0.2 mm | Configuration Buse 0.4 mm | Logique et Objectif ObscuraNox                                                                    |
 |------------------------------|---------------------------|---------------------------|---------------------------------------------------------------------------------------------------|
@@ -26,7 +26,7 @@ Voici le tableau récapitulatif complet au format Markdown pour les deux buses.
 
 ---
 
-### 🧐 Les secrets mathématiques d'ObscuraNox sur les supports
+### Les secrets mathématiques d'ObscuraNox sur les supports
 
 #### 1. La formule magique de la "Top Z distance"
 
@@ -44,5 +44,3 @@ Sur les profils standards, l'espacement de l'interface est souvent de 0.5 mm ou 
 Par défaut, les logiciels mettent 2 parois sur les supports pour qu'ils soient solides. ObscuraNox force la valeur à **1**. Associé au style *Tree Slim*, cela donne des branches qui ressemblent à des pailles très fines. Elles ont assez de force verticale pour porter le poids d'un bras en plastique, mais aucune résistance latérale : il vous suffit de pincer le support avec vos doigts pour qu'il s'effondre et libère la figurine sans aucun effort.
 
 ---
-
-Prêt à finir cette numérisation de profil avec le dernier onglet, **Others** (Brim de sécurité pour stabiliser ces arbres très fins) ?
