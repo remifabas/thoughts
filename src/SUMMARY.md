@@ -42,6 +42,9 @@
 
 - [About heroes](./notit/heroes.md)
 
+# Airbrush
+
+- [Airbrush tips](./notit/airbrush.html)
 
 # 3D printing
 
