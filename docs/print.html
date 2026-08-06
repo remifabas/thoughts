@@ -1900,7 +1900,7 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>0.4mm Airbrush Spray Simulator & Mechanics Guide</title>
+    <title>Airbrush Spray Simulator & Mechanics Guide</title>
     <style>
       :root {
         --bg-color: #0f172a;
@@ -1973,13 +1973,28 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
     color: var(--text-main);
   }
 
+  /* Interactive Badge Button */
   .badge-needle {
     background: #0284c7;
     color: #fff;
-    padding: 4px 10px;
+    padding: 6px 14px;
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+  }
+
+  .badge-needle:hover {
+    background: #0369a1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
+  }
+
+  .badge-needle:active {
+    transform: translateY(0);
   }
 
   .panel-title {
@@ -2251,7 +2266,14 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
       <div class="container">
         <div class="header">
           <h1 id="airbrush-spray-calculator"><a class="header" href="#airbrush-spray-calculator">Airbrush Spray Calculator</a></h1>
-          <span class="badge-needle">Needle Size: 0.4mm</span>
+          <!-- Clickable Dynamic Needle Badge -->
+          <button
+            class="badge-needle"
+            id="badge-needle"
+            title="Click to cycle needle size"
+          >
+            Needle: 0.4mm
+          </button>
         </div>
 <pre><code>    &lt;!-- Left Column: Display Settings &amp; Spray Inputs --&gt;
     &lt;div class=&quot;input-panel&quot;&gt;
@@ -2312,7 +2334,7 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
         /&gt;
       &lt;/div&gt;
 
-      &lt;!-- Air Pressure (Bar) --&gt;
+      &lt;!-- Air Pressure (Bar up to 4.5) --&gt;
       &lt;div class=&quot;control-group&quot;&gt;
         &lt;div class=&quot;control-label&quot;&gt;
           &lt;span&gt;Air Pressure (Bar)&lt;/span&gt;
@@ -2322,7 +2344,7 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
           type=&quot;range&quot;
           id=&quot;input-pressure&quot;
           min=&quot;0.3&quot;
-          max=&quot;5.0&quot;
+          max=&quot;4.5&quot;
           value=&quot;1.4&quot;
           step=&quot;0.1&quot;
         /&gt;
@@ -2412,27 +2434,22 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
     &lt;h2 class=&quot;panel-title&quot;&gt;Airbrushing Mechanics &amp; Practical Tips&lt;/h2&gt;
 
     &lt;div class=&quot;guide-grid&quot;&gt;
-      &lt;!-- Card 1: Consistency Ratios --&gt;
+      &lt;!-- Card 1: Needle Size Selection --&gt;
       &lt;div class=&quot;guide-card&quot;&gt;
-        &lt;h3&gt;Understanding Consistency %&lt;/h3&gt;
-        &lt;p&gt;
-          The slider percentage represents the proportion of
-          &lt;strong&gt;paint&lt;/strong&gt; in the total liquid volume:
-        &lt;/p&gt;
+        &lt;h3&gt;Nozzle Size Selection&lt;/h3&gt;
         &lt;ul&gt;
           &lt;li&gt;
-            &lt;strong&gt;20–25% (1:3 Paint:Thinner):&lt;/strong&gt; Water-thin &quot;Glaze&quot;
-            texture. Great for smooth filters and tinting, but prone to
-            spidering if sprayed close.
+            &lt;strong&gt;0.2mm (Fine Detail):&lt;/strong&gt; Requires thinner paint
+            (~25-30%) and steady pressure. Highly sensitive to spitting if
+            paint is thick.
           &lt;/li&gt;
           &lt;li&gt;
-            &lt;strong&gt;35–40% (1:1.5 Paint:Thinner):&lt;/strong&gt; &quot;Skim Milk&quot;
-            consistency. Ideal baseline for basecoating and priming with a
-            0.4mm needle.
+            &lt;strong&gt;0.4mm (All-Rounder):&lt;/strong&gt; The sweet spot for general
+            hobby work, layer painting, and balanced viscosity tolerance.
           &lt;/li&gt;
           &lt;li&gt;
-            &lt;strong&gt;50% (1:1 Paint:Thinner):&lt;/strong&gt; &quot;Whole Milk&quot; texture.
-            Heavy coverage layer. Requires slightly higher pressure.
+            &lt;strong&gt;0.5mm (Broad Coverage):&lt;/strong&gt; Handles thick primers
+            and varnishes effortlessly with minimal clogging risk.
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/div&gt;
@@ -2443,14 +2460,13 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
         &lt;p&gt;Practical physical limitations determine the slider bounds:&lt;/p&gt;
         &lt;ul&gt;
           &lt;li&gt;
-            &lt;strong&gt;Under 10% (Too Thin):&lt;/strong&gt; The acrylic binder breaks
-            down completely. Paint cannot bind to resin/plastic and behaves
-            like pure water, instantly pooling or running.
+            &lt;strong&gt;Under 10% (Too Thin):&lt;/strong&gt; Acrylic binder breaks
+            down completely; paint behaves like water and instantly pools.
           &lt;/li&gt;
           &lt;li&gt;
-            &lt;strong&gt;Over 90% (Too Thick):&lt;/strong&gt; Unthinned paint straight
-            from the bottle cannot clear the 0.4mm nozzle, leading to
-            instant tip-dry and severe spitting/clogging.
+            &lt;strong&gt;Over 90% (Too Thick):&lt;/strong&gt; Unthinned paint cannot
+            clear the nozzle without extreme pressure (4.0+ Bar), causing
+            instant tip-dry and clogging.
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/div&gt;
@@ -2462,13 +2478,15 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
           &lt;li&gt;
             &lt;strong&gt;Spidering (Blowout):&lt;/strong&gt; Occurs when high air
             pressure blasts runny paint onto a surface at close range.
-            &lt;em&gt;Fix: Lower pressure, back away, or add paint.&lt;/em&gt;
+            &lt;em&gt;Fix: Lower pressure, back away, or thicken paint.&lt;/em&gt;
           &lt;/li&gt;
           &lt;li&gt;
-            &lt;strong&gt;Spitting / Dry Spray:&lt;/strong&gt; Occurs when air pressure
-            cannot atomize thick paint, or when paint dries mid-air before
-            landing.
-            &lt;em&gt;Fix: Thin paint, raise pressure, or move closer.&lt;/em&gt;
+            &lt;strong&gt;Spitting / Dry Spray:&lt;/strong&gt; Occurs when pressure
+            cannot atomize thick paint, or paint dries mid-air.
+            &lt;em
+              &gt;Fix: Thin paint, raise pressure up to 4.5 Bar, or move
+              closer.&lt;/em
+            &gt;
           &lt;/li&gt;
         &lt;/ul&gt;
       &lt;/div&gt;
@@ -2477,7 +2495,12 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
 &lt;/div&gt;
 
 &lt;script&gt;
+  // State management for needle size
+  let currentNeedleSize = 0.4;
+  const needleSizes = [0.2, 0.4, 0.5];
+
   // --- DOM Elements ---
+  const badgeNeedle = document.getElementById(&quot;badge-needle&quot;);
   const inSize = document.getElementById(&quot;input-size&quot;);
   const inRes = document.getElementById(&quot;input-res&quot;);
   const inConsistency = document.getElementById(&quot;input-consistency&quot;);
@@ -2530,6 +2553,9 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
   }
 
   function updateSimulator() {
+    const needleSize = currentNeedleSize;
+    badgeNeedle.textContent = &quot;Needle: &quot; + needleSize.toFixed(1) + &quot;mm 🔄&quot;;
+
     const pxPerCm = calculatePxPerCm();
     const consistency = parseFloat(inConsistency.value);
     const barPressure = parseFloat(inPressure.value);
@@ -2546,14 +2572,17 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
     distScaleBar.style.width = realWidthPx + &quot;px&quot;;
     distScaleText.textContent = distance.toFixed(1) + &quot; cm&quot;;
 
-    // 0.4mm Nozzle calculations
-    const coneAngleRad = (14 + psiEquivalent * 0.08) * (Math.PI / 180);
+    // Cone spread angle
+    const baseConeDeg = 10 + needleSize * 10;
+    const coneAngleRad =
+      (baseConeDeg + psiEquivalent * 0.08) * (Math.PI / 180);
     const radius = distance * Math.tan(coneAngleRad / 2);
     const areaCm2 = Math.PI * Math.pow(radius, 2);
 
     // Spidering Risk
+    const needleSpiderMultiplier = 0.5 / needleSize;
     let spiderFactor =
-      (Math.pow(psiEquivalent, 1.4) * 2.5) /
+      (Math.pow(psiEquivalent, 1.4) * 2.5 * needleSpiderMultiplier) /
       ((consistency + 5) * (distance + 0.8));
     let spiderRisk = Math.min(
       100,
@@ -2561,9 +2590,12 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
     );
 
     // Spitting Risk
+    const needleSpitMultiplier =
+      needleSize === 0.2 ? 1.5 : needleSize === 0.5 ? 0.7 : 1.0;
     let spitFactor =
-      Math.pow(consistency, 1.5) / (psiEquivalent * 1.2) +
-      Math.pow(distance, 1.8) / 35;
+      (Math.pow(consistency, 1.5) / (psiEquivalent * 1.2) +
+        Math.pow(distance, 1.8) / 35) *
+      needleSpitMultiplier;
     let spitRisk = Math.min(100, Math.max(0, Math.round(spitFactor * 1.2)));
 
     // Update meters
@@ -2592,15 +2624,22 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
       statusBadge.textContent = &quot;Suboptimal Balance (Minor Artifacts)&quot;;
       statusBadge.className = &quot;status-badge status-warning&quot;;
     } else {
-      statusBadge.textContent = &quot;Ideal 0.4mm Spray Setup&quot;;
+      statusBadge.textContent =
+        &quot;Ideal &quot; + needleSize.toFixed(1) + &quot;mm Spray Setup&quot;;
       statusBadge.className = &quot;status-badge status-good&quot;;
     }
 
     // Draw Canvas Simulation
-    drawSprayPattern(radius, spiderRisk, spitRisk, pxPerCm);
+    drawSprayPattern(radius, spiderRisk, spitRisk, pxPerCm, needleSize);
   }
 
-  function drawSprayPattern(radiusCm, spiderRisk, spitRisk, pxPerCm) {
+  function drawSprayPattern(
+    radiusCm,
+    spiderRisk,
+    spitRisk,
+    pxPerCm,
+    needleSize,
+  ) {
     const cw = canvas.width;
     const ch = canvas.height;
     const cx = cw / 2;
@@ -2608,10 +2647,12 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
 
     ctx.clearRect(0, 0, cw, ch);
 
-    const pxRadius = Math.max(5, radiusCm * pxPerCm);
+    const pxRadius = Math.max(4, radiusCm * pxPerCm);
 
+    const coreOpacity =
+      needleSize === 0.2 ? 0.95 : needleSize === 0.5 ? 0.75 : 0.85;
     const gradient = ctx.createRadialGradient(cx, cy, 0, cx, cy, pxRadius);
-    gradient.addColorStop(0, &quot;rgba(56, 189, 248, 0.85)&quot;);
+    gradient.addColorStop(0, `rgba(56, 189, 248, ${coreOpacity})`);
     gradient.addColorStop(0.55, &quot;rgba(56, 189, 248, 0.35)&quot;);
     gradient.addColorStop(1, &quot;rgba(56, 189, 248, 0)&quot;);
 
@@ -2624,7 +2665,7 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
     if (spiderRisk &gt; 30) {
       const legCount = Math.floor((spiderRisk - 25) / 5);
       ctx.strokeStyle = &quot;rgba(56, 189, 248, 0.75)&quot;;
-      ctx.lineWidth = 2;
+      ctx.lineWidth = needleSize === 0.2 ? 1.2 : 2;
 
       for (let i = 0; i &lt; legCount; i++) {
         const angle = i * ((Math.PI * 2) / legCount) + spiderRisk * 0.1;
@@ -2648,7 +2689,8 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
       for (let i = 0; i &lt; dropCount; i++) {
         const angle = Math.sin(i * 99) * Math.PI * 2;
         const dist = pxRadius * 0.4 + Math.cos(i * 33) * pxRadius * 1.6;
-        const dropSize = 1.5 + Math.abs(Math.sin(i)) * 3;
+        const dropSize =
+          (needleSize === 0.5 ? 2.0 : 1.2) + Math.abs(Math.sin(i)) * 2.5;
 
         ctx.beginPath();
         ctx.arc(
@@ -2664,6 +2706,13 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
   }
 
   // Event Listeners
+  badgeNeedle.addEventListener(&quot;click&quot;, () =&gt; {
+    const currentIndex = needleSizes.indexOf(currentNeedleSize);
+    const nextIndex = (currentIndex + 1) % needleSizes.length;
+    currentNeedleSize = needleSizes[nextIndex];
+    updateSimulator();
+  });
+
   inSize.addEventListener(&quot;input&quot;, updateSimulator);
   inRes.addEventListener(&quot;change&quot;, updateSimulator);
   inConsistency.addEventListener(&quot;input&quot;, updateSimulator);
