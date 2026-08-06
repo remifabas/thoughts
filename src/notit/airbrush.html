@@ -61,6 +61,11 @@
         .container {
           grid-template-columns: 1fr;
         }
+        .header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
       }
 
       .header {
@@ -77,28 +82,39 @@
         color: var(--text-main);
       }
 
-      /* Interactive Badge Button */
+      /* Badge Group Styling */
+      .needle-badge-group {
+        display: flex;
+        gap: 8px;
+      }
+
       .badge-needle {
-        background: #0284c7;
-        color: #fff;
-        padding: 6px 14px;
+        background: rgba(15, 23, 42, 0.6);
+        color: var(--text-muted);
+        padding: 6px 12px;
         border-radius: 20px;
         font-size: 0.85rem;
         font-weight: 600;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        border: 1px solid var(--border);
         cursor: pointer;
         transition: all 0.2s ease;
         user-select: none;
+        opacity: 0.5;
       }
 
       .badge-needle:hover {
-        background: #0369a1;
-        transform: translateY(-1px);
-        box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
+        opacity: 0.85;
+        border-color: var(--accent);
+        color: var(--text-main);
       }
 
-      .badge-needle:active {
-        transform: translateY(0);
+      /* Active Badge State */
+      .badge-needle.active {
+        background: #0284c7;
+        color: #fff;
+        border-color: rgba(255, 255, 255, 0.3);
+        opacity: 1;
+        box-shadow: 0 2px 10px rgba(2, 132, 199, 0.4);
       }
 
       .panel-title {
@@ -369,14 +385,13 @@
       <div class="container">
         <div class="header">
           <h1>Airbrush Spray Calculator</h1>
-          <!-- Clickable Dynamic Needle Badge -->
-          <button
-            class="badge-needle"
-            id="badge-needle"
-            title="Click to cycle needle size"
-          >
-            Needle: 0.4mm
-          </button>
+
+          <!-- 3 Dynamic Badges -->
+          <div class="needle-badge-group">
+            <button class="badge-needle" data-size="0.2">0.2mm</button>
+            <button class="badge-needle active" data-size="0.4">0.4mm</button>
+            <button class="badge-needle" data-size="0.5">0.5mm</button>
+          </div>
         </div>
 
         <!-- Left Column: Display Settings & Spray Inputs -->
@@ -599,12 +614,11 @@
     </div>
 
     <script>
-      // State management for needle size
+      // State management for needle size (0.4mm active by default)
       let currentNeedleSize = 0.4;
-      const needleSizes = [0.2, 0.4, 0.5];
 
       // --- DOM Elements ---
-      const badgeNeedle = document.getElementById("badge-needle");
+      const badgeButtons = document.querySelectorAll(".badge-needle");
       const inSize = document.getElementById("input-size");
       const inRes = document.getElementById("input-res");
       const inConsistency = document.getElementById("input-consistency");
@@ -658,7 +672,6 @@
 
       function updateSimulator() {
         const needleSize = currentNeedleSize;
-        badgeNeedle.textContent = "Needle: " + needleSize.toFixed(1) + "mm 🔄";
 
         const pxPerCm = calculatePxPerCm();
         const consistency = parseFloat(inConsistency.value);
@@ -676,7 +689,7 @@
         distScaleBar.style.width = realWidthPx + "px";
         distScaleText.textContent = distance.toFixed(1) + " cm";
 
-        // Cone spread angle
+        // Cone spread angle based on needle size
         const baseConeDeg = 10 + needleSize * 10;
         const coneAngleRad =
           (baseConeDeg + psiEquivalent * 0.08) * (Math.PI / 180);
@@ -809,12 +822,18 @@
         }
       }
 
-      // Event Listeners
-      badgeNeedle.addEventListener("click", () => {
-        const currentIndex = needleSizes.indexOf(currentNeedleSize);
-        const nextIndex = (currentIndex + 1) % needleSizes.length;
-        currentNeedleSize = needleSizes[nextIndex];
-        updateSimulator();
+      // Event Listeners for Badge Selection
+      badgeButtons.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove active state from all buttons
+          badgeButtons.forEach((b) => b.classList.remove("active"));
+
+          // Activate clicked button
+          btn.classList.add("active");
+          currentNeedleSize = parseFloat(btn.dataset.size);
+
+          updateSimulator();
+        });
       });
 
       inSize.addEventListener("input", updateSimulator);

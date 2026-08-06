@@ -1957,6 +1957,11 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
     .container {
       grid-template-columns: 1fr;
     }
+    .header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
   }
 
   .header {
@@ -1973,28 +1978,39 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
     color: var(--text-main);
   }
 
-  /* Interactive Badge Button */
+  /* Badge Group Styling */
+  .needle-badge-group {
+    display: flex;
+    gap: 8px;
+  }
+
   .badge-needle {
-    background: #0284c7;
-    color: #fff;
-    padding: 6px 14px;
+    background: rgba(15, 23, 42, 0.6);
+    color: var(--text-muted);
+    padding: 6px 12px;
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid var(--border);
     cursor: pointer;
     transition: all 0.2s ease;
     user-select: none;
+    opacity: 0.5;
   }
 
   .badge-needle:hover {
-    background: #0369a1;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
+    opacity: 0.85;
+    border-color: var(--accent);
+    color: var(--text-main);
   }
 
-  .badge-needle:active {
-    transform: translateY(0);
+  /* Active Badge State */
+  .badge-needle.active {
+    background: #0284c7;
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.3);
+    opacity: 1;
+    box-shadow: 0 2px 10px rgba(2, 132, 199, 0.4);
   }
 
   .panel-title {
@@ -2266,16 +2282,15 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
       <div class="container">
         <div class="header">
           <h1 id="airbrush-spray-calculator"><a class="header" href="#airbrush-spray-calculator">Airbrush Spray Calculator</a></h1>
-          <!-- Clickable Dynamic Needle Badge -->
-          <button
-            class="badge-needle"
-            id="badge-needle"
-            title="Click to cycle needle size"
-          >
-            Needle: 0.4mm
-          </button>
-        </div>
-<pre><code>    &lt;!-- Left Column: Display Settings &amp; Spray Inputs --&gt;
+<pre><code>      &lt;!-- 3 Dynamic Badges --&gt;
+      &lt;div class=&quot;needle-badge-group&quot;&gt;
+        &lt;button class=&quot;badge-needle&quot; data-size=&quot;0.2&quot;&gt;0.2mm&lt;/button&gt;
+        &lt;button class=&quot;badge-needle active&quot; data-size=&quot;0.4&quot;&gt;0.4mm&lt;/button&gt;
+        &lt;button class=&quot;badge-needle&quot; data-size=&quot;0.5&quot;&gt;0.5mm&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Left Column: Display Settings &amp; Spray Inputs --&gt;
     &lt;div class=&quot;input-panel&quot;&gt;
       &lt;h2 class=&quot;panel-title&quot;&gt;1. Monitor Calibration&lt;/h2&gt;
 
@@ -2495,12 +2510,11 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
 &lt;/div&gt;
 
 &lt;script&gt;
-  // State management for needle size
+  // State management for needle size (0.4mm active by default)
   let currentNeedleSize = 0.4;
-  const needleSizes = [0.2, 0.4, 0.5];
 
   // --- DOM Elements ---
-  const badgeNeedle = document.getElementById(&quot;badge-needle&quot;);
+  const badgeButtons = document.querySelectorAll(&quot;.badge-needle&quot;);
   const inSize = document.getElementById(&quot;input-size&quot;);
   const inRes = document.getElementById(&quot;input-res&quot;);
   const inConsistency = document.getElementById(&quot;input-consistency&quot;);
@@ -2554,7 +2568,6 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
 
   function updateSimulator() {
     const needleSize = currentNeedleSize;
-    badgeNeedle.textContent = &quot;Needle: &quot; + needleSize.toFixed(1) + &quot;mm 🔄&quot;;
 
     const pxPerCm = calculatePxPerCm();
     const consistency = parseFloat(inConsistency.value);
@@ -2572,7 +2585,7 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
     distScaleBar.style.width = realWidthPx + &quot;px&quot;;
     distScaleText.textContent = distance.toFixed(1) + &quot; cm&quot;;
 
-    // Cone spread angle
+    // Cone spread angle based on needle size
     const baseConeDeg = 10 + needleSize * 10;
     const coneAngleRad =
       (baseConeDeg + psiEquivalent * 0.08) * (Math.PI / 180);
@@ -2705,12 +2718,18 @@ Au lieu de projeter son agressivité sur les autres (en disant &quot;le pouvoir 
     }
   }
 
-  // Event Listeners
-  badgeNeedle.addEventListener(&quot;click&quot;, () =&gt; {
-    const currentIndex = needleSizes.indexOf(currentNeedleSize);
-    const nextIndex = (currentIndex + 1) % needleSizes.length;
-    currentNeedleSize = needleSizes[nextIndex];
-    updateSimulator();
+  // Event Listeners for Badge Selection
+  badgeButtons.forEach((btn) =&gt; {
+    btn.addEventListener(&quot;click&quot;, () =&gt; {
+      // Remove active state from all buttons
+      badgeButtons.forEach((b) =&gt; b.classList.remove(&quot;active&quot;));
+
+      // Activate clicked button
+      btn.classList.add(&quot;active&quot;);
+      currentNeedleSize = parseFloat(btn.dataset.size);
+
+      updateSimulator();
+    });
   });
 
   inSize.addEventListener(&quot;input&quot;, updateSimulator);
